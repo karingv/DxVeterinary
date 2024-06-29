@@ -47,6 +47,16 @@ class UserRepository @Inject constructor(
         }
     }
 
+    suspend fun getUserData(uid: String): Result<UserModel> {
+        return try {
+            val snapshot = firestore.collection("users").document(uid).get().await()
+            val user = snapshot.toObject(UserModel::class.java)
+            Result.success(user ?: throw Exception("Usuario no encontrado"))
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
     fun logout() {
         firebaseAuth.signOut()
     }

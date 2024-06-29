@@ -63,6 +63,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.runtime.livedata)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -77,21 +78,22 @@ dependencies {
     //Hilt
     implementation ("com.google.dagger:hilt-android:2.48")
     kapt ("com.google.dagger:hilt-android-compiler:2.48")
-    implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.2.0")
 
     // Firebase
     implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
     implementation ("com.google.firebase:firebase-auth-ktx")
     implementation ("com.google.firebase:firebase-firestore-ktx")
     implementation ("com.google.firebase:firebase-storage-ktx")
-
-
+    implementation("com.google.firebase:firebase-storage:21.0.0")
     //Dependencia compose
     implementation("androidx.compose.material:material:1.6.7")
     // Otros
     implementation ("androidx.navigation:navigation-compose:2.4.0-beta02")
     implementation ("com.jakewharton.threetenabp:threetenabp:1.3.1")
 
+
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.2")
 
     /*
     implementation("com.google.dagger:hilt-android:2.48")

@@ -76,6 +76,7 @@ fun Reservation(
             displayText = { it.name }
         )
         Log.d("Reservation", "Servicio seleccionado: $selectedService")
+
         Spacer(modifier = Modifier.height(8.dp))
 
         // Seleccionar Mascota

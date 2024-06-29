@@ -12,5 +12,6 @@ fun loadVectorResource(id: Int): ImageVector {
     val context = LocalContext.current
     val drawable = context.getDrawable(id)
     return (drawable as? android.graphics.drawable.VectorDrawable)?.toBitmap()?.asImageBitmap()
-        ?.let { ImageVector.vectorResource(id) } ?: throw IllegalArgumentException("Vector drawable resource not found.")
+        ?.let { ImageVector.vectorResource(id) }
+        ?: throw IllegalArgumentException("Vector drawable resource not found.")
 }
